@@ -1,0 +1,35 @@
+@import '../../resources/scss/utilities.scss';
+
+.header {
+    width: 100%;
+    padding: 2em 3em;;
+    display: flex;
+    justify-content: space-between;
+    background-color: darksalmon;
+}
+.logo {
+    display: flex;
+}
+.icone {
+    width: 3em;
+    height: 3em;
+    padding: 0.5em;
+    background-color: $defaultColor;
+    text-align: center;
+    border-radius: $defaultBorderRadius;
+
+    .fa-volleyball-ball {
+        color: $secondaryColor;
+        font-size: 2em;
+    }
+}
+.principal-title {
+    padding: .5em 0 0 .5em;
+    h2 {
+        display: inline-block;
+    }
+}
+
+.header-menu {
+    
+}

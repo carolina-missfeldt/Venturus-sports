@@ -1,0 +1,51 @@
+@import '../../resources/scss/utilities.scss';
+
+.box-menu {
+    position: relative;
+}
+
+.menu {
+    min-width: 200px;
+    background-color: $secondaryColor;
+    -webkit-box-shadow: 2px 0px 32px 3px rgba(0,0,0,0.44);
+    -moz-box-shadow: 2px 0px 32px 3px rgba(0,0,0,0.44);
+    box-shadow: 2px 0px 32px 3px rgba(0,0,0,0.44);
+    border-radius: $defaultBorderRadius;
+    position: absolute;
+    right: 0;
+    z-index: 999;
+    display: none;
+
+    li {
+        padding: .5em 0;
+        cursor: pointer;
+        &:hover {
+            background-color:  $hoverLight;
+            color: $defaultColor;
+        }
+        p {
+            margin-left: .5em;
+        }
+    }
+    .logout {
+        padding: .7em 0;
+        border-top: 1px solid $hoverLight;
+    }
+}
+
+.trigger-menu {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    .fa-bars {
+        font-size: 2em;
+        color: $defaultColor;
+    }
+}
+
+.box-menu {
+    &:hover {
+        .menu{ display: block};
+    }
+}

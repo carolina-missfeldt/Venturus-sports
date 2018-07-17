@@ -1,6 +1,6 @@
 import { Set } from '../../interfaces/set';
 
-export class Album implements Set{
+export class Album implements Set {
     public userId: number;
     public id: number;
     public title: string;

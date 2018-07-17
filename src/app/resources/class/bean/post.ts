@@ -1,6 +1,6 @@
 import { Set } from '../../interfaces/set';
 
-export class Post implements Set{
+export class Post implements Set {
     public userId: number;
     public id: number;
     public title: string;

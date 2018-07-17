@@ -11,11 +11,15 @@ import { AlbumService } from './resources/services/album.service';
 import { PostService } from './resources/services/post.service';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+import { HeaderComponent } from './components/header/header.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
