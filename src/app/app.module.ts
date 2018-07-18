@@ -10,7 +10,6 @@ import { PhotoService } from './resources/services/photo.service';
 import { AlbumService } from './resources/services/album.service';
 import { PostService } from './resources/services/post.service';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
@@ -24,7 +23,6 @@ import { UsersComponent } from './components/users/users.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     HeaderComponent,
     MenuComponent,
     BreadcrumbComponent,

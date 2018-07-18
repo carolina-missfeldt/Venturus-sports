@@ -1,4 +1,36 @@
-<div class="section-title-box">
-    <h1 class="section-title">Users</h1>
-    <div class="section-line"></div>
+<div class="container">
+  <div class="section-title-box">
+      <h1 class="section-title">Users</h1>
+      <div class="section-line"></div>
+  </div>
+  <table class="users-table">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Name</th>
+        <th>E-mail</th>
+        <th>City</th>
+        <th>Ride in group</th>
+        <th>Day of the week</th>
+        <th>Posts</th>
+        <th>Albums</th>
+        <th>Photos</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of usersList">
+        <td>{{user?.username}}</td>
+        <td>{{user?.name}}</td>
+        <td><a class="green-text" href="http://{{user?.email}}" target="_blank">{{user?.email}}</a></td>
+        <td><a href="https://maps.google.com.br/maps?q={{user.address.geo.lat}},+{{user.address.geo.lng}}&iwloc=A&hl=pt-br " target="_blank">{{user?.address.city}}</a></td>
+        <td>{{user?.rideInGroup }}</td>
+        <td>{{user?.dayOfTheWeek}}</td>
+        <td class="green-text">{{user?.posts?.length}}</td>
+        <td class="green-text">{{user?.album?.length}}</td>
+        <td>{{photos}}</td>
+        <td class="excluir"><i class="far fa-trash-alt"></i></td>
+      </tr>
+    </tbody>
+  </table>
 </div>

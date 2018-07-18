@@ -2,6 +2,9 @@
 import { Set } from '../../interfaces/set';
 import { Address } from './address';
 import { Company } from './company';
+import { Post } from './post';
+import { Photo } from './photo';
+import { Album } from './album';
 
 export class User implements Set {
     public id: number;
@@ -12,6 +15,10 @@ export class User implements Set {
     public phone: string;
     public website: string;
     public company: Company;
+    public rideInGroup: string;
+    public dayOfTheWeek: string;
+    public posts: Array<Post> = [];
+    public album: Array<Album> = [];
 
     set(input: any) {
         Object.assign(this, input);

@@ -1,0 +1,42 @@
+@import '../../resources/scss/utilities.scss';
+
+.users-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: $microFont;
+    .excluir {
+        cursor: pointer;
+        i {
+            color: transparent;
+        }
+    }
+    thead {
+        tr {
+            border-bottom: 1px solid $fontColor1;
+        }
+        th {
+            text-align: left;
+            padding: 1em .5em;
+        }
+    }
+    tbody {
+        tr:nth-child(odd) {
+            background-color: $bgColor1;
+        }
+
+        tr {
+            &:hover {
+                background-color: $bgColor2;
+                .excluir{ i{ color: $defaultColor;}}
+            }
+        }
+
+        td {
+            padding: 1em .5em;
+        }
+    }
+}
+
+.green-text {
+    color: $defaultColor;
+}
