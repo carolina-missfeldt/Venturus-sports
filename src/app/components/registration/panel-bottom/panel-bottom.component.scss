@@ -1,0 +1,32 @@
+@import '../../../resources/scss/utilities.scss';
+
+.bottom-panel {
+    padding: 1em 0 0 0;
+    .panel {
+        flex-wrap: nowrap;
+        @media screen and (max-width: 700px){
+            flex-wrap: wrap;
+        }
+    }
+    .panel-box {
+        align-items: stretch;
+        flex-wrap: wrap;
+        // max-width: 33%;
+    }
+    .panel-item {
+        align-self: center;
+    }
+}
+
+.panel-box-title {
+    align-self: flex-start;
+    width: 100%;
+    @include panel-box-title;
+}
+.panel-text {
+    max-width: 80%;
+}
+
+.text {
+    font-size: $microFont;
+}

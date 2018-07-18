@@ -1,3 +1,5 @@
+@import 'app/resources/scss/utilities.scss';
+
 * {
     margin: 0;
     padding: 0;
@@ -8,4 +10,41 @@
 }
 a, a:hover, a:focus {
     color: #000;
+}
+
+.container {
+    width: 100%;
+    padding: 2em 3em;
+    @media screen and (max-width: 700px) {
+        padding: .5em 1em;
+        
+    }
+}
+
+.panel {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.panel-box {
+    display: flex;
+}
+
+.panel-item {
+    padding: .5em;
+    i {
+        font-size: 3em;
+        color: $defaultColor;
+    }
+}
+
+.section-title-box {
+    display: flex;
+}
+
+.section-title {
+    @include section-title();
+}
+.section-line {
+    @include section-line();
 }

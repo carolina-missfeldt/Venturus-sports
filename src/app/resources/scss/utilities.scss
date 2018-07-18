@@ -1,6 +1,28 @@
 $defaultColor: #1ABC9C;
-$secondaryColor: #fff;
+$secondaryColor: #BAEBE1;
+$white: #fff;
+$bgColor1: #F4F4F4;
+$fontColor1: #E3E3E3;
 
-$hoverLight: #F4F4F4;
-
+$microFont: .7em;
+$largeFont: 1.3em;
+$sectionTitleFont:2em;
 $defaultBorderRadius: 4px;
+
+@mixin section-title {
+    font-size: 2em;
+    font-weight: 200;
+}
+
+@mixin section-line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 2px solid $fontColor1;
+    margin: auto 0 auto 2em;
+}
+
+@mixin panel-box-title {
+    font-weight: 200;
+    color: $defaultColor;
+    font-size: $largeFont;
+}

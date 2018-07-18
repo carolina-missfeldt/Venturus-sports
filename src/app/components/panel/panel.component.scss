@@ -1,0 +1,15 @@
+@import '../../resources/scss/utilities.scss';
+
+.top-panel {
+    background-color: $secondaryColor;
+}
+
+.first-text {
+    color: #a09d9d;
+    font-size: $microFont;
+}
+
+.second-text {
+    font-weight: 600;
+    font-size: $largeFont;
+}
