@@ -47,4 +47,7 @@ a, a:hover, a:focus {
 }
 .section-line {
     @include section-line();
+    @media screen and (max-width: 800px) {
+        display: none;
+    }
 }

@@ -123,7 +123,10 @@ export class UsersComponent implements OnInit {
       const randomString = Math.floor(Math.random() * possiblerideInGroup.length);
       const randomDay = Math.floor(Math.random() * daysOfWeek.length);
       user.rideInGroup = possiblerideInGroup[randomString];
-      user.dayOfTheWeek.push(daysOfWeek[randomDay]);
+      if (!user.dayOfTheWeek) {
+        user.dayOfTheWeek = [];
+      }
+      user.dayOfTheWeek[0] = daysOfWeek[randomDay];
     });
     return this.usersList;
   }
