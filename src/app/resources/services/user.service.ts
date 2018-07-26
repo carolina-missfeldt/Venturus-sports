@@ -17,4 +17,9 @@ export class UserService {
       map(res => res.map((user: User) => new User().set(user)))
     );
   }
+
+  // public deleteUser(id?: number): Observable<Response> {
+  //   return this.http.delete<Response>(`https://jsonplaceholder.typicode.com/users/${id}`);
+  //   // requisição delete não funciona
+  // }
 }

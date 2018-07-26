@@ -1,0 +1,88 @@
+@import '../../../resources/scss/utilities.scss';
+
+.form {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    padding: 1em 0;
+    border-top: 2px solid $bgColor1;
+    .first-box,
+    .second-box{
+        div {
+            padding: .5em;
+            width: 100%;
+        }
+        width: 50%;
+        @media screen and (max-width: 800px) {
+            width: 100%;
+        } 
+    }
+}
+
+
+.form-group {
+    .input-title {
+        display: block;
+    }
+    .instructions {
+        display: none;
+        font-size: $microFont;
+    }
+    input {
+        height: 30px;
+        width: 100%;
+        align-self: center;
+        border-radius: $defaultBorderRadius;
+        outline: none;
+        border: 1px solid $fontColor1;
+        padding: .5em;
+        &:focus {
+            border-color: $defaultColor;
+        }
+    }
+
+     input[type=radio], input[type=checkbox]{
+        display:none;
+    }
+     
+    input[type=radio] + label, 
+    input[type=checkbox] + label{
+        display:inline-block;
+        height:20px;
+        padding:0 0 0 25px;
+        margin:0 10px 0 0;
+        background-image:url(http://www.webcis.com.br/images/imagens-noticias/checkbox/ico-master.png);
+        background-repeat:no-repeat;
+        background-position:0 0;
+        font-size: 12px;
+    }
+     
+     input[type=checkbox] + label{
+        background-position:0 -60px;
+    }
+     
+    input[type=radio]:checked + label{
+        background-position:0 -30px;
+    }
+     
+    input[type=checkbox]:checked + label {
+        background-position:0 -90px;
+    }
+}
+
+.save, .discard {
+    margin-right: .5em;
+    border: none;
+    border-radius: $defaultBorderRadius;
+    padding: .5em;
+    outline: none;
+}
+
+.save {
+    background-color: $defaultColor;
+}
+
+.discard {
+    background-color: $bgColor1;
+}

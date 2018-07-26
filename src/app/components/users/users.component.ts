@@ -19,6 +19,7 @@ export class UsersComponent implements OnInit {
   public usersList: Array<User> = [];
   public albumList: Array<Album> = [];
   public photos: number;
+  public search: string;
 
   constructor(
     private userService: UserService,
@@ -44,6 +45,10 @@ export class UsersComponent implements OnInit {
         console.log(err.statusText);
       }
     );
+  }
+
+  public deleteUser(user: User) {
+    this.usersList.splice(this.usersList.indexOf(user), 1);
   }
 
   private postsList(users: Array<User>) {
@@ -122,11 +127,5 @@ export class UsersComponent implements OnInit {
     });
     return this.usersList;
   }
-
-  public sendEmail(email: string, subject: string) {
-    const body = 'Teste';
-    window.open(`${email}?subject=${subject}t&body=${body}`);
-  }
-  // AIzaSyAIkOOwPt7rKPPsckPiLFk2dUvXoxxjdTU
 
 }

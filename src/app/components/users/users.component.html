@@ -2,6 +2,7 @@
   <div class="section-title-box">
       <h1 class="section-title">Users</h1>
       <div class="section-line"></div>
+      <input class="search" [(ngModel)]="search" placeholder="Filter table content by username" type="text">
   </div>
   <table class="users-table">
     <thead>
@@ -19,18 +20,37 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of usersList">
+      <tr *ngFor="let user of usersList | filter: search">
         <td>{{user?.username}}</td>
         <td>{{user?.name}}</td>
-        <td><a class="green-text" href="http://{{user?.email}}" target="_blank">{{user?.email}}</a></td>
-        <td><a href="https://maps.google.com.br/maps?q={{user.address.geo.lat}},+{{user.address.geo.lng}}&iwloc=A&hl=pt-br " target="_blank">{{user?.address.city}}</a></td>
+        <td><a class="green-text" href="mailto:http://{{user?.email}}" target="_blank">{{user?.email}}</a></td>
+        <td><a class="green-text" href="https://maps.google.com.br/maps?q={{user.address.geo.lat}},+{{user.address.geo.lng}}&iwloc=A&hl=pt-br " 
+          target="_blank">{{user?.address.city}}</a></td>
         <td>{{user?.rideInGroup }}</td>
         <td>{{user?.dayOfTheWeek}}</td>
         <td class="green-text">{{user?.posts?.length}}</td>
         <td class="green-text">{{user?.album?.length}}</td>
         <td>{{photos}}</td>
-        <td class="excluir"><i class="far fa-trash-alt"></i></td>
+        <td class="excluir" (click)="deleteUser(user)"><i class="far fa-trash-alt"></i></td>
       </tr>
     </tbody>
   </table>
+  <div class="cards">
+    <div class="card" *ngFor="let user of usersList | filter: search">
+        <p><strong>Username:</strong> {{user?.username}}</p>
+        <p><strong>Name:</strong> {{user?.name}}</p>
+        <p><strong>E-mail:</strong><a class="green-text" href="mailto:http://{{user?.email}}" target="_blank"> {{user?.email}}</a></p>
+        <p><strong>City:</strong><a class="green-text" 
+          href="https://maps.google.com.br/maps?q={{user.address.geo.lat}},+{{user.address.geo.lng}}&iwloc=A&hl=pt-br " target="_blank"> 
+            {{user?.address.city}}
+          </a>
+        </p>
+        <p><strong>Ride in group:</strong> {{user?.rideInGroup }}</p>
+        <p><strong>Day of week:</strong> {{user?.dayOfTheWeek}}</p>
+        <p class="green-text"><strong>Posts:</strong> {{user?.posts?.length}}</p>
+        <p class="green-text"><strong>Albums:</strong> {{user?.album?.length}}</p>
+        <p><strong>Photos:</strong> {{photos}}</p>
+        <p class="excluir" (click)="deleteUser(user)"><i class="far fa-trash-alt"></i></p>
+    </div>
+  </div>
 </div>

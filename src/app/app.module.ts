@@ -19,6 +19,7 @@ import { PanelBottomComponent } from './components/registration/panel-bottom/pan
 import { RegistrationFormComponent } from './components/registration/registration-form/registration-form.component';
 import { PhotosComponent } from './components/photos/photos.component';
 import { UsersComponent } from './components/users/users.component';
+import { FilterPipe } from './resources/pipe/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { UsersComponent } from './components/users/users.component';
     RegistrationFormComponent,
     PhotosComponent,
     UsersComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,7 @@ import { UsersComponent } from './components/users/users.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
     UserService,

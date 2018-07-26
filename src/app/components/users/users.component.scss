@@ -1,14 +1,19 @@
 @import '../../resources/scss/utilities.scss';
 
+.excluir {
+    cursor: pointer;
+    i {
+        color: transparent;
+    }
+}
+
 .users-table {
     border-collapse: collapse;
     width: 100%;
     font-size: $microFont;
-    .excluir {
-        cursor: pointer;
-        i {
-            color: transparent;
-        }
+
+    @media screen and (max-width: 800px) {
+        display: none;
     }
     thead {
         tr {
@@ -39,4 +44,45 @@
 
 .green-text {
     color: $defaultColor;
+}
+
+.search {
+    margin-left: 2em;
+    height: 30px;
+    width: 40%;
+    align-self: center;
+    border-radius: $defaultBorderRadius;
+    outline: none;
+    border: 1px solid $fontColor1;
+    padding: .5em;
+    &:focus {
+        border-color: $defaultColor;
+    }
+}
+
+.cards {
+    display: none;
+    margin-top: 2em;
+    @media screen and (max-width: 800px) {
+        display: block;
+    }
+    .excluir {
+        float: right;
+        margin-top: -190px;
+        font-size: 2em;
+    }
+    .card {
+        width: 100%;
+        padding: .5em;
+        &:nth-child(odd) {
+            background-color: $bgColor1;
+        }
+        &:hover {
+            background-color: $bgColor2;
+            .excluir{ i{ color: $defaultColor;}}
+        }
+        p {
+            // display: inline-block;
+        }
+    }
 }

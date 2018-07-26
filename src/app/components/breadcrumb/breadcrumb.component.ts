@@ -6,10 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./breadcrumb.component.scss']
 })
 export class BreadcrumbComponent implements OnInit {
-
+  public mostrarTodos = false;
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  public toggle() {
+    if (!this.mostrarTodos) {
+      this.mostrarTodos = true;
+    } else {
+      this.mostrarTodos = false;
+
+    }
+    console.log(this.mostrarTodos);
   }
 
 }

@@ -1,0 +1,36 @@
+@import '../../resources/scss/utilities.scss';
+
+.breadcrumb {
+    display: flex;
+    background-color: $bgColor1;
+    padding: .7em 3em;
+    li {
+        cursor: pointer;
+        display: none;
+        a {
+            padding: 0 1em;
+            color: $defaultColor;
+
+        }
+    }
+    @media screen and (max-width: 805px) {
+        display: none;
+    }
+}
+
+.all-breadcrumb {
+    li {
+        display: block;
+    }
+}
+
+.small-breadcrumb {
+    li {
+        &:nth-child(n+1):nth-child(-n+3) {
+            display: block;
+        }
+        &:last-child {
+            display: block;
+        }
+    }
+}
