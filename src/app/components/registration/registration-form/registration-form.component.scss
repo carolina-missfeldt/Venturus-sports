@@ -21,13 +21,25 @@
 }
 
 
+.display-none {
+    display: none;
+}
+.instructions {
+    display: block;
+    font-size: $microFont;
+    color: red;
+}
+.disabled {
+    background-color: $bgColor1;
+    cursor: not-allowed;
+}
 .form-group {
+    .form-item {
+        display: inline-block;
+        width: auto !important;
+    }
     .input-title {
         display: block;
-    }
-    .instructions {
-        display: none;
-        font-size: $microFont;
     }
     input {
         height: 30px;
@@ -37,9 +49,12 @@
         outline: none;
         border: 1px solid $fontColor1;
         padding: .5em;
-        &:focus {
-            border-color: $defaultColor;
-        }
+    }
+    .input-valid:focus {
+        border-color: $defaultColor;
+    }
+    .input-invalid {
+        border-color: red;
     }
 
      input[type=radio], input[type=checkbox]{

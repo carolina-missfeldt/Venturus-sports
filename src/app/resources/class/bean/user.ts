@@ -16,7 +16,7 @@ export class User implements Set {
     public website: string;
     public company: Company;
     public rideInGroup: string;
-    public dayOfTheWeek: string;
+    public dayOfTheWeek: Array<string>;
     public posts: Array<Post> = [];
     public album: Array<Album> = [];
 

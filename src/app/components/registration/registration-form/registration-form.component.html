@@ -1,54 +1,55 @@
-<form class="form">
+<form class="form" #f="ngForm">
   <div class="first-box">
     <div class="form-group">
-      <label class="input-title" for="#username">Username</label>
-      <input type="text">
-      <div class="instructions">Fu_lano222</div>
+      <label class="input-title" for="username">Username</label>
+      <input type="text" id="username" name="username" #username="ngModel" pattern="^[a-z0-9_-]{3,15}$" [(ngModel)]="newUser.username" required
+      [ngClass]="!username.valid && (username.dirty || username.touched) ? 'input-invalid' : 'input-valid'">
+      <div [ngClass]="!username.valid && (username.dirty || username.touched) ? 'instructions' : 'display-none'">
+        <p>Ex: Fu_lano222 </p>
+      </div>
     </div>
     <div class="form-group">
-      <label class="input-title" for="#name">Name</label>
-      <input type="text" placeholder="Fulano de Tal">
-      <div class="instructions"></div>
+      <label class="input-title" for="name">Name</label>
+      <input type="text" id="name" name="name" #name="ngModel" [(ngModel)]="newUser.name" pattern="^[^-\s][a-zA-ZÀ-ú ]{3,35}$" required
+      [ngClass]="!name.valid && (name.dirty || name.touched) ? 'input-invalid' : 'input-valid'">
+      <div [ngClass]="!name.valid && (name.dirty || name.touched) ? 'instructions' : 'display-none'">
+          <p>Ex: Fulano de Tal </p>
+      </div>
     </div>
     <div class="form-group">
-      <label class="input-title"  for="#email">Email</label>
-      <input type="text" placeholder="fulano@gmail.com.br">
-      <div class="instructions"></div>
+      <label class="input-title"  for="email">Email</label>
+      <input type="email" id="email" name="email" #email="ngModel" [(ngModel)]="newUser.email" required
+      pattern="[A-Za-z0-9._%+-]{2,}@[a-zA-Z]{1,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"
+      [ngClass]="!email.valid && (email.dirty || email.touched) ? 'input-invalid' : 'input-valid'">
+      <div [ngClass]="!email.valid && (email.dirty || email.touched) ? 'instructions' : 'display-none'">
+          <p>Ex: fulano@gamail.com.br </p>
+      </div>
     </div>
     <div class="form-group">
-      <button class="save" type="submit">Save</button>
+      <button class="save" type="submit" [disabled]="!f.form.valid" [ngClass]="!f.form.valid ? 'disabled': 'save'" (click)="save()">Save</button>
       <button class="discard" type="button">Discard</button>
     </div>
   </div>
   <div class="second-box">
       <div class="form-group">
-          <label class="input-title" for="#city">City</label>
-          <input type="text" placeholder="São Paulo">
+          <label class="input-title" for="city">City</label>
+          <input class="input-valid" type="text" id="city" name="city" [(ngModel)]="city">
           <div class="instructions"></div>
         </div>
         <div class="form-group">
-            <input type="radio" value="always" name="campo-radio" id="campo-radio1" />
-            <label for="campo-radio1">Always</label>
-            <input type="radio" value="sometimes" name="campo-radio" id="campo-radio2" />
-            <label for="campo-radio2">Sometimes</label>
-            <input type="radio" value="never" name="campo-radio" id="campo-radio3" />
-            <label for="campo-radio3">Never</label>
+            <label class="input-title">Ride in group</label>
+            <div class="form-item" *ngFor="let choice of radioChoices; let i = index">
+              <input type="radio" value="choice?.value" name="campo-radio" id="campo-radio{{i}}"/>
+              <label for="campo-radio{{i}}">{{choice?.label}}</label>
+
+            </div>
         </div>
         <div class="form-group">
-            <input type="checkbox" value="sunday" name="campo-checkbox" id="campo-checkbox1" />
-            <label for="campo-checkbox1">Sun</label>
-            <input type="checkbox" value="monday" name="campo-checkbox" id="campo-checkbox2" />
-            <label for="campo-checkbox2">Mon</label>
-            <input type="checkbox" value="tuesday" name="campo-checkbox" id="campo-checkbox3" />
-            <label for="campo-checkbox3">Tue</label>
-            <input type="checkbox" value="wednesday" name="campo-checkbox" id="campo-checkbox4" />
-            <label for="campo-checkbox4">Wed</label>
-            <input type="checkbox" value="thursday" name="campo-checkbox" id="campo-checkbox5" />
-            <label for="campo-checkbox5">Thur</label>
-            <input type="checkbox" value="friday" name="campo-checkbox" id="campo-checkbox6" />
-            <label for="campo-checkbox6">Fri</label>
-            <input type="checkbox" value="saturday" name="campo-checkbox" id="campo-checkbox7" />
-            <label for="campo-checkbox7">Sat</label>
+            <label class="input-title">Day of the Week</label>
+            <div class="form-item" *ngFor="let checkChoice of checkboxChoices; let i = index">
+              <input type="checkbox" [value]="checkChoice?.value" name="campo-checkbox{{i}}" id="campo-checkbox{{i}}" />
+              <label for="campo-checkbox{{i}}">{{checkChoice?.label}}</label>
+            </div>
         </div>
   </div>
 </form>
